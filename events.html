@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UKmandu — Events</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/logo.png" alt="UKmandu" class="logo" />
+    </a>
+    <nav class="links">
+      <a class="active" href="events.html">Events</a>
+      <a href="videos.html">Videos</a>
+      <a class="btn" href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="section-head">
+      <h1>Events</h1>
+      <div class="filters">
+        <input id="search" class="input" placeholder="Search events, city, artist..." />
+        <select id="city" class="input">
+          <option value="">All cities</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="events-list" class="grid"></div>
+  </main>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> UKmandu</span>
+  </footer>
+
+  <script src="js/events.js"></script>
+</body>
+</html>
