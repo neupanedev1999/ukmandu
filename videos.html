@@ -6,12 +6,13 @@
   <title>UKmandu — Videos</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="nav">
     <a class="brand" href="index.html">
       <img src="assets/logo.png" alt="UKmandu" class="logo" />
     </a>
-    <nav class="links">
+    <nav class="nav-links">
       <a href="events.html">Events</a>
       <a class="active" href="videos.html">Videos</a>
       <a class="btn" href="index.html">Home</a>
@@ -19,13 +20,15 @@
   </header>
 
   <main class="page">
-    <div class="section-head">
-      <h1>Videos</h1>
-      <a class="link" href="https://www.youtube.com/@Ukmandu/videos" target="_blank" rel="noreferrer">Open on YouTube →</a>
+    <div class="page-head">
+      <div>
+        <h1>Videos</h1>
+        <p>Highlights, interviews and UK Nepali community content.</p>
+      </div>
+      <a class="link" target="_blank" rel="noreferrer" href="https://www.youtube.com/@Ukmandu/videos">Open YouTube →</a>
     </div>
 
     <div class="video">
-      <!-- Replace the playlist id if you want -->
       <iframe
         src="https://www.youtube-nocookie.com/embed/videoseries?list=PLJEeO8_QHsRGa1n0iNVNnECEqHemyzcBw"
         title="UKmandu Videos"
@@ -36,8 +39,8 @@
     </div>
   </main>
 
-  <footer class="footer">
-    <span>© <span id="year"></span> UKmandu</span>
+  <footer class="footer mini">
+    <div class="footer-bottom">© <span id="year"></span> UKmandu</div>
   </footer>
 
   <script>
