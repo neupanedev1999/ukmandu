@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>UKmandu — Events</title>
+  <meta name="description" content="Browse Nepali events in the UK by city, date and search." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="nav">
     <a class="brand" href="index.html">
       <img src="assets/logo.png" alt="UKmandu" class="logo" />
     </a>
-    <nav class="links">
+    <nav class="nav-links">
       <a class="active" href="events.html">Events</a>
       <a href="videos.html">Videos</a>
       <a class="btn" href="index.html">Home</a>
@@ -19,10 +21,14 @@
   </header>
 
   <main class="page">
-    <div class="section-head">
-      <h1>Events</h1>
+    <div class="page-head">
+      <div>
+        <h1>Events</h1>
+        <p>Search and filter upcoming Nepali events across the UK.</p>
+      </div>
+
       <div class="filters">
-        <input id="search" class="input" placeholder="Search events, city, artist..." />
+        <input id="search" class="input" placeholder="Search event, city, venue..." />
         <select id="city" class="input">
           <option value="">All cities</option>
         </select>
@@ -30,10 +36,15 @@
     </div>
 
     <div id="events-list" class="grid"></div>
+
+    <div class="tip">
+      Want to list your event? Email:
+      <a href="mailto:neupanedev2055@gmail.com">neupanedev2055@gmail.com</a>
+    </div>
   </main>
 
-  <footer class="footer">
-    <span>© <span id="year"></span> UKmandu</span>
+  <footer class="footer mini">
+    <div class="footer-bottom">© <span id="year"></span> UKmandu</div>
   </footer>
 
   <script src="js/events.js"></script>
