@@ -1,6 +1,7 @@
 async function getViews(slug) {
   try {
-    const res = await fetch(`https://api.countapi.xyz/hit/ukmandu/${slug}`);
+    // use your domain as namespace (better than just "ukmandu")
+    const res = await fetch(`https://api.countapi.xyz/hit/ukmandu.online/${slug}`);
     const data = await res.json();
     return data.value;
   } catch (err) {
@@ -8,6 +9,7 @@ async function getViews(slug) {
     return null;
   }
 }
+
 function esc(str){
   return String(str).replace(/[&<>"']/g, m => ({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
@@ -40,11 +42,22 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 let allEvents = [];
 
+async function loadViewsFor(filtered){
+  // load counts after cards exist in the DOM
+  for (const e of filtered) {
+    const count = await getViews(e.slug);
+    const el = document.getElementById(`views-${e.slug}`);
+    if (el && count !== null) {
+      el.textContent = `👁 ${count} views`;
+    }
+  }
+}
+
 function render(){
   const q = (searchEl.value || "").toLowerCase().trim();
   const city = cityEl.value;
 
-  const filtered = allEvents.filter(e => {
+  let filtered = allEvents.filter(e => {
     const hay = `${e.title} ${e.city} ${e.venue || ""}`.toLowerCase();
     return (!q || hay.includes(q)) && (!city || e.city === city);
   });
@@ -52,33 +65,37 @@ function render(){
   filtered.sort((a,b)=> new Date(a.date) - new Date(b.date));
 
   listEl.innerHTML = filtered.map(e => `
-  <div class="card" id="${e.slug}">
-    <div class="badges">
-      <span class="badge">${esc(badgeDate(e.date))}</span>
-      <span class="pill">${esc(e.city)}</span>
-    </div>
+    <div class="card" id="${e.slug}">
+      <div class="badges">
+        <span class="badge">${esc(badgeDate(e.date))}</span>
+        <span class="pill">${esc(e.city)}</span>
+      </div>
 
-    <h3>${esc(e.title)}</h3>
-    <div class="meta">${esc(when(e.date))}</div>
-    <div class="meta">${esc(e.venue || "")}</div>
+      <h3>${esc(e.title)}</h3>
+      <div class="meta">${esc(when(e.date))}</div>
+      <div class="meta">${esc(e.venue || "")}</div>
 
-    <div class="meta view-count" id="views-${e.slug}">
-      👁 Loading views...
-    </div>
+      <div class="meta view-count" id="views-${e.slug}">👁 Loading views...</div>
 
-    <div style="margin-top:12px;">
-      ${e.ticketUrl ? `<a class="btn primary" target="_blank" href="${e.ticketUrl}">Buy tickets</a>` : ""}
+      <div style="margin-top:12px;">
+        ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy tickets</a>` : ""}
+      </div>
     </div>
-  </div>
-`).join("");
+  `).join("");
+
+  // IMPORTANT: now actually load and show view counts
+  loadViewsFor(filtered);
 }
 
 async function init(){
-  const res = await fetch("data/events.json");
+  // IMPORTANT: your repo has events.json in ROOT
+  const res = await fetch("events.json");
   allEvents = await res.json();
 
   const cities = [...new Set(allEvents.map(e => e.city))].sort();
-  cityEl.innerHTML = `<option value="">All cities</option>` + cities.map(c => `<option>${esc(c)}</option>`).join("");
+  cityEl.innerHTML =
+    `<option value="">All cities</option>` +
+    cities.map(c => `<option>${esc(c)}</option>`).join("");
 
   searchEl.addEventListener("input", render);
   cityEl.addEventListener("change", render);
@@ -87,4 +104,3 @@ async function init(){
 }
 
 init();
-
