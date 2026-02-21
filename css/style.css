@@ -227,3 +227,10 @@ a{color:inherit;text-decoration:none}
   color:rgba(255,255,255,.55);
 }
 @media (max-width:850px){.footer-inner{grid-template-columns:1fr}}
+.view-count{
+  margin-top:10px;
+  font-weight:700;
+  color: var(--yellow);
+  font-size:14px;
+}
+
