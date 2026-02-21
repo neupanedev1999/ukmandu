@@ -1,3 +1,13 @@
+async function getViews(slug) {
+  try {
+    const res = await fetch(`https://api.countapi.xyz/hit/ukmandu/${slug}`);
+    const data = await res.json();
+    return data.value;
+  } catch (err) {
+    console.error("View error:", err);
+    return null;
+  }
+}
 function esc(str){
   return String(str).replace(/[&<>"']/g, m => ({
     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
@@ -42,21 +52,25 @@ function render(){
   filtered.sort((a,b)=> new Date(a.date) - new Date(b.date));
 
   listEl.innerHTML = filtered.map(e => `
-    <div class="card" id="${e.slug}">
-      <div class="badges">
-        <span class="badge">${esc(badgeDate(e.date))}</span>
-        <span class="pill">${esc(e.city)}</span>
-      </div>
-      <h3>${esc(e.title)}</h3>
-      <div class="meta">${esc(when(e.date))}</div>
-      <div class="meta">${esc(e.venue || "")}</div>
-      ${e.organiser ? `<div class="meta" style="margin-top:8px;opacity:.85;">Organiser: ${esc(e.organiser)}</div>` : ""}
-      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
-        ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy tickets</a>` : ""}
-        <a class="btn ghost" href="events.html#${e.slug}">Copy link</a>
-      </div>
+  <div class="card" id="${e.slug}">
+    <div class="badges">
+      <span class="badge">${esc(badgeDate(e.date))}</span>
+      <span class="pill">${esc(e.city)}</span>
     </div>
-  `).join("") || `<div class="card"><h3>No events found</h3><div class="meta">Try another search or city.</div></div>`;
+
+    <h3>${esc(e.title)}</h3>
+    <div class="meta">${esc(when(e.date))}</div>
+    <div class="meta">${esc(e.venue || "")}</div>
+
+    <div class="meta view-count" id="views-${e.slug}">
+      👁 Loading views...
+    </div>
+
+    <div style="margin-top:12px;">
+      ${e.ticketUrl ? `<a class="btn primary" target="_blank" href="${e.ticketUrl}">Buy tickets</a>` : ""}
+    </div>
+  </div>
+`).join("");
 }
 
 async function init(){
@@ -73,3 +87,4 @@ async function init(){
 }
 
 init();
+
