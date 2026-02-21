@@ -5,7 +5,8 @@
     "city": "Birmingham",
     "venue": "O2 Institute, B5 6DY",
     "date": "2026-04-13T19:00:00+01:00",
-    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment"
+    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
+    "organiser": "BSK Entertainment"
   },
   {
     "title": "Neetesh Jung Kunwar Live in Manchester",
@@ -13,7 +14,8 @@
     "city": "Manchester",
     "venue": "Eagle Deansgate, M3 4HE",
     "date": "2026-04-18T19:00:00+01:00",
-    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment"
+    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
+    "organiser": "BSK Entertainment"
   },
   {
     "title": "Neetesh Jung Kunwar Live in London",
@@ -21,6 +23,7 @@
     "city": "London",
     "venue": "Springwest Academy, TW13 7EF",
     "date": "2026-04-25T21:00:00+01:00",
-    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment"
+    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
+    "organiser": "BSK Entertainment"
   }
 ]
