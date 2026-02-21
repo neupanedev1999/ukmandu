@@ -1,3 +1,28 @@
+function esc(str){
+  return String(str).replace(/[&<>"']/g, m => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  }[m]));
+}
+
+function when(iso){
+  return new Date(iso).toLocaleString("en-GB", {
+    timeZone: "Europe/London",
+    weekday: "short",
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit"
+  });
+}
+
+function badgeDate(iso){
+  const d = new Date(iso);
+  const day = d.toLocaleString("en-GB", { timeZone:"Europe/London", day:"2-digit" });
+  const mon = d.toLocaleString("en-GB", { timeZone:"Europe/London", month:"short" });
+  return `${day} ${mon}`;
+}
+
 const listEl = document.getElementById("events-list");
 const searchEl = document.getElementById("search");
 const cityEl = document.getElementById("city");
@@ -11,41 +36,35 @@ function render(){
 
   const filtered = allEvents.filter(e => {
     const hay = `${e.title} ${e.city} ${e.venue || ""}`.toLowerCase();
-    const matchQ = !q || hay.includes(q);
-    const matchCity = !city || e.city === city;
-    return matchQ && matchCity;
+    return (!q || hay.includes(q)) && (!city || e.city === city);
   });
 
-  filtered.sort((a,b)=> new Date(a.date)-new Date(b.date));
+  filtered.sort((a,b)=> new Date(a.date) - new Date(b.date));
 
-  listEl.innerHTML = filtered.map(e => {
-    const d = new Date(e.date);
-    const when = d.toLocaleString("en-GB", { timeZone:"Europe/London", dateStyle:"full", timeStyle:"short" });
-
-    return `
-      <div class="card" id="${e.slug}">
-        <h3>${escapeHtml(e.title)}</h3>
-        <div class="meta">${escapeHtml(e.city)} • ${escapeHtml(when)}</div>
-        <div class="meta">${escapeHtml(e.venue || "")}</div>
-        ${e.ticketUrl ? `<a class="btn primary" style="display:inline-block;margin-top:12px" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy Tickets</a>` : ""}
+  listEl.innerHTML = filtered.map(e => `
+    <div class="card" id="${e.slug}">
+      <div class="badges">
+        <span class="badge">${esc(badgeDate(e.date))}</span>
+        <span class="pill">${esc(e.city)}</span>
       </div>
-    `;
-  }).join("") || `<div class="card"><h3>No events found</h3><div class="meta">Try another search or city.</div></div>`;
-}
-
-function escapeHtml(str){
-  return String(str).replace(/[&<>"']/g, m => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
-  }[m]));
+      <h3>${esc(e.title)}</h3>
+      <div class="meta">${esc(when(e.date))}</div>
+      <div class="meta">${esc(e.venue || "")}</div>
+      ${e.organiser ? `<div class="meta" style="margin-top:8px;opacity:.85;">Organiser: ${esc(e.organiser)}</div>` : ""}
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;">
+        ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy tickets</a>` : ""}
+        <a class="btn ghost" href="events.html#${e.slug}">Copy link</a>
+      </div>
+    </div>
+  `).join("") || `<div class="card"><h3>No events found</h3><div class="meta">Try another search or city.</div></div>`;
 }
 
 async function init(){
   const res = await fetch("data/events.json");
   allEvents = await res.json();
 
-  // fill city dropdown
   const cities = [...new Set(allEvents.map(e => e.city))].sort();
-  cityEl.innerHTML = `<option value="">All cities</option>` + cities.map(c => `<option>${c}</option>`).join("");
+  cityEl.innerHTML = `<option value="">All cities</option>` + cities.map(c => `<option>${esc(c)}</option>`).join("");
 
   searchEl.addEventListener("input", render);
   cityEl.addEventListener("change", render);
