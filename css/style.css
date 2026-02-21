@@ -17,14 +17,7 @@ body{
 }
 
 a{color:inherit;text-decoration:none}
-.logo {
-  width: 60px;              /* smaller size */
-  height: 60px;             /* equal height = perfect circle */
-  object-fit: cover;        /* prevents distortion */
-  border-radius: 50%;       /* makes it circle */
-  border: 2px solid rgba(255,205,0,.4);  /* subtle gold border */
-  box-shadow: 0 0 12px rgba(255,205,0,.25); /* soft glow */
-}
+.logo{width:140px;height:auto}
 .link{color:var(--yellow);text-decoration:underline;text-underline-offset:4px}
 .link:hover{opacity:.9}
 
@@ -234,4 +227,3 @@ a{color:inherit;text-decoration:none}
   color:rgba(255,255,255,.55);
 }
 @media (max-width:850px){.footer-inner{grid-template-columns:1fr}}
-
