@@ -4,17 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>UKmandu — Nepali Events in the UK</title>
+  <meta name="description" content="Discover upcoming Nepali events, concerts, festivals, and cultural gatherings across the UK." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="nav">
     <a class="brand" href="index.html">
       <img src="assets/logo.png" alt="UKmandu" class="logo" />
     </a>
-    <nav class="links">
+    <nav class="nav-links">
       <a href="events.html">Events</a>
       <a href="videos.html">Videos</a>
-      <a class="btn" href="events.html">Explore</a>
+      <a class="btn primary" href="events.html">Browse Events</a>
     </nav>
   </header>
 
@@ -26,32 +28,67 @@
       <p class="kicker">NEPALI EVENTS • UNITED KINGDOM</p>
       <h1>Discover concerts, festivals & cultural nights across the UK.</h1>
       <p class="sub">
-        UKmandu is the simplest way for the Nepali community to find what’s on — and for organisers to reach the right audience.
+        UKmandu is your one-stop place to find upcoming Nepali events — explore by city, check event details,
+        and buy tickets from official links.
       </p>
 
-      <div class="cta">
-        <a class="btn primary" href="events.html">Browse Events</a>
-        <a class="btn ghost" href="videos.html">Watch Videos</a>
+      <div class="hero-actions">
+        <a class="btn primary" href="events.html">Explore Events</a>
+        <a class="btn ghost" href="videos.html">Watch UKmandu</a>
+      </div>
+
+      <div class="trust">
+        <span>✔ UK-wide</span>
+        <span>✔ Official links</span>
+        <span>✔ Built for Nepali community</span>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <h2>Upcoming events</h2>
-        <a href="events.html" class="link">View all →</a>
+        <h2>Featured event</h2>
+        <a class="link" href="events.html">See all →</a>
       </div>
+      <div id="featured" class="featured"></div>
+    </section>
 
+    <section class="section">
+      <div class="section-head">
+        <h2>Upcoming events</h2>
+        <a class="link" href="events.html">View all →</a>
+      </div>
       <div id="home-events" class="grid"></div>
 
-      <div class="note">
-        <h3>For organisers</h3>
-        <p>List your event for free during launch. Premium listings will be available once traffic grows.</p>
+      <div class="organiser">
+        <div>
+          <h3>For organisers</h3>
+          <p>
+            List your event for free during launch. Premium placement will be available once traffic grows.
+          </p>
+        </div>
+        <a class="btn ghost" href="mailto:neupanedev2055@gmail.com?subject=UKmandu%20Event%20Listing">List your event</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© <span id="year"></span> UKmandu</span>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-title">UKmandu</div>
+        <div class="footer-text">Nepali events across the UK — concerts, club nights, festivals & cultural gatherings.</div>
+      </div>
+      <div>
+        <div class="footer-title">Links</div>
+        <a class="footer-link" href="events.html">Events</a>
+        <a class="footer-link" href="videos.html">Videos</a>
+      </div>
+      <div>
+        <div class="footer-title">Contact</div>
+        <a class="footer-link" href="mailto:neupanedev2055@gmail.com">neupanedev2055@gmail.com</a>
+        <a class="footer-link" target="_blank" rel="noreferrer" href="https://www.youtube.com/@Ukmandu/videos">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> UKmandu</div>
   </footer>
 
   <script src="js/main.js"></script>
