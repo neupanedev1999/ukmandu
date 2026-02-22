@@ -1,15 +1,15 @@
 async function getViews(slug) {
-  // safe URL (slug may contain spaces/special chars)
-  const url = `https://api.countapi.xyz/hit/ukmandu.online/${encodeURIComponent(slug)}`;
+  const namespace = "ukmandu-online"; // can be any name, keep it consistent
+  const key = encodeURIComponent(slug);
+  const url = `https://counterapi.dev/api/${namespace}/${key}/up`; // increments on every page load
 
   try {
     const res = await fetch(url);
-
-    // if CountAPI is blocked or down, don't hang on "Loading..."
-    if (!res.ok) throw new Error(`CountAPI failed: ${res.status}`);
-
+    if (!res.ok) throw new Error(`counterapi failed: ${res.status}`);
     const data = await res.json();
-    return data.value;
+
+    // counterapi.dev returns { count: number, ... }
+    return data.count;
   } catch (err) {
     console.error("View counter error:", err, url);
     return null;
@@ -115,3 +115,4 @@ async function init(){
 }
 
 init();
+
