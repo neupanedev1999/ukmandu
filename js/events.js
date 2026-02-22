@@ -1,16 +1,9 @@
-async function getViews(slug) {
-  const url = `https://api.countapi.xyz/hit/ukmandu/${encodeURIComponent(slug)}`;
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error("API error");
-    const data = await res.json();
-    return data.value;
-  } catch (err) {
-    console.error("View counter error:", err);
-    return null;
-  }
-}
+const SUPABASE_URL = "https://mspckltwldaxgyhgtdnk.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_TveJs_5Df9ON2AaqhUBQOQ_fG8VHQY9";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function esc(str){
   return String(str).replace(/[&<>"']/g, m => ({
@@ -44,21 +37,21 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 let allEvents = [];
 
-async function loadViewsFor(filtered){
-  // load counts after cards exist in the DOM
-  for (const e of filtered) {
-    const el = document.getElementById(`views-${e.slug}`);
-    if (!el) continue;
+async function incrementAndShowViews(slug){
+  const el = document.getElementById(`views-${slug}`);
+  if (!el) return;
 
-    const count = await getViews(e.slug);
+  const { data, error } = await supabase.rpc("increment_event_view", {
+    slug_in: slug
+  });
 
-    if (count === null) {
-      el.textContent = "👁 views unavailable";
-      continue;
-    }
-
-    el.textContent = `👁 ${count} views`;
+  if (error) {
+    console.error("Supabase error:", error);
+    el.textContent = "👁 views unavailable";
+    return;
   }
+
+  el.textContent = `👁 ${data} views`;
 }
 
 function render(){
@@ -83,7 +76,9 @@ function render(){
       <div class="meta">${esc(when(e.date))}</div>
       <div class="meta">${esc(e.venue || "")}</div>
 
-      <div class="meta view-count" id="views-${e.slug}">👁 Loading views...</div>
+      <div class="meta view-count" id="views-${e.slug}">
+        👁 Loading views...
+      </div>
 
       <div style="margin-top:12px;">
         ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy tickets</a>` : ""}
@@ -91,8 +86,7 @@ function render(){
     </div>
   `).join("");
 
-  // IMPORTANT: now actually load and show view counts
-  loadViewsFor(filtered);
+  filtered.forEach(e => incrementAndShowViews(e.slug));
 }
 
 async function init(){
@@ -111,6 +105,3 @@ async function init(){
 }
 
 init();
-
-
-
