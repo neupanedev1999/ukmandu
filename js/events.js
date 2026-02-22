@@ -89,7 +89,7 @@ function render(){
 
 async function init(){
   // IMPORTANT: your repo has events.json in ROOT
-  const res = await fetch("events.json");
+  const res = await fetch("data/events.json");
   allEvents = await res.json();
 
   const cities = [...new Set(allEvents.map(e => e.city))].sort();
@@ -104,3 +104,4 @@ async function init(){
 }
 
 init();
+
