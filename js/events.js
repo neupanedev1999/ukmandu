@@ -1,11 +1,17 @@
 async function getViews(slug) {
+  // safe URL (slug may contain spaces/special chars)
+  const url = `https://api.countapi.xyz/hit/ukmandu.online/${encodeURIComponent(slug)}`;
+
   try {
-    // use your domain as namespace (better than just "ukmandu")
-    const res = await fetch(`https://api.countapi.xyz/hit/ukmandu.online/${slug}`);
+    const res = await fetch(url);
+
+    // if CountAPI is blocked or down, don't hang on "Loading..."
+    if (!res.ok) throw new Error(`CountAPI failed: ${res.status}`);
+
     const data = await res.json();
     return data.value;
   } catch (err) {
-    console.error("View error:", err);
+    console.error("View counter error:", err, url);
     return null;
   }
 }
@@ -45,11 +51,17 @@ let allEvents = [];
 async function loadViewsFor(filtered){
   // load counts after cards exist in the DOM
   for (const e of filtered) {
-    const count = await getViews(e.slug);
     const el = document.getElementById(`views-${e.slug}`);
-    if (el && count !== null) {
-      el.textContent = `👁 ${count} views`;
+    if (!el) continue;
+
+    const count = await getViews(e.slug);
+
+    if (count === null) {
+      el.textContent = "👁 views unavailable";
+      continue;
     }
+
+    el.textContent = `👁 ${count} views`;
   }
 }
 
@@ -88,7 +100,6 @@ function render(){
 }
 
 async function init(){
-  // IMPORTANT: your repo has events.json in ROOT
   const res = await fetch("data/events.json");
   allEvents = await res.json();
 
@@ -104,4 +115,3 @@ async function init(){
 }
 
 init();
-
