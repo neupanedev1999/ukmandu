@@ -1,14 +1,12 @@
 async function getViews(slug) {
-  const namespace = "ukmandu-online"; // can be any name, keep it consistent
+  const namespace = "ukmandu-online";
   const key = encodeURIComponent(slug);
-  const url = `https://counterapi.dev/api/${namespace}/${key}/up`; // increments on every page load
+  const url = `https://counterapi.dev/api/${namespace}/${key}/up`;
 
   try {
-    const res = await fetch(url);
+    const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error(`counterapi failed: ${res.status}`);
     const data = await res.json();
-
-    // counterapi.dev returns { count: number, ... }
     return data.count;
   } catch (err) {
     console.error("View counter error:", err, url);
@@ -115,4 +113,5 @@ async function init(){
 }
 
 init();
+
 
