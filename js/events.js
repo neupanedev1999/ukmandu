@@ -42,7 +42,7 @@ function render(){
   const city = cityEl?.value || "";
 
   let filtered = allEvents
-    .filter(e => isUpcoming(e.date)) // ✅ hide past events
+    .filter(e => isUpcoming(e.date))
     .filter(e => {
       const hay = `${e.title || ""} ${e.city || ""} ${e.venue || ""}`.toLowerCase();
       return (!q || hay.includes(q)) && (!city || e.city === city);
@@ -77,7 +77,6 @@ async function init(){
     if (!res.ok) throw new Error(`events.json fetch failed: ${res.status}`);
     allEvents = await res.json();
 
-    // City dropdown only from upcoming events
     if (cityEl) {
       const cities = [...new Set(allEvents.filter(e => isUpcoming(e.date)).map(e => e.city).filter(Boolean))].sort();
       cityEl.innerHTML =
