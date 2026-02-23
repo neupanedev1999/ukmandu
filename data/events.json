@@ -19,28 +19,23 @@
   },
   {
     "title": "Neetesh Jung Kunwar Live in London",
-    "image": "images/neetesh-london-2026.jpg",
     "slug": "neetesh-jung-kunwar-london-2026",
     "city": "London",
     "venue": "Springwest Academy, TW13 7EF",
     "date": "2026-04-25T21:00:00+01:00",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment"
+    "organiser": "BSK Entertainment",
+    "image": "images/neetesh-london-2026.jpg"
   },
   {
-  "id": "spring-festival-2026-farnborough",
-  "title": "Spring Festival 2026",
-  "date": "2026-05-02",
-  "time": "1PM - 10PM",
-  "city": "Farnborough",
-  "venue": "Farnborough Football Club",
-  "address": "Cherrywood Road, Farnborough, GU14 8UD",
-  "headline": "Albatross",
-  "image": "images/spring-festival-2026.jpg",
-  "ticketUrl": "https://www.tickettailor.com/events/theyatraeventsuk/1932095",
-}
+    "title": "Spring Festival 2026",
+    "slug": "spring-festival-2026-farnborough",
+    "city": "Farnborough",
+    "venue": "Farnborough Football Club",
+    "address": "Cherrywood Road, Farnborough, GU14 8UD",
+    "date": "2026-05-02T13:00:00+01:00",
+    "ticketUrl": "https://www.tickettailor.com/events/theyatraeventsuk/1932095",
+    "organiser": "The Yatra Events UK",
+    "image": "images/spring-festival-2026.jpg"
+  }
 ]
-
-
-
-
