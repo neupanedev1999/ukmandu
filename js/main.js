@@ -81,23 +81,15 @@ async function init(){
   const res = await fetch("data/events.json", { cache: "no-store" });
   const events = await res.json();
 
-  // Sort by date ascending
   events.sort((a,b)=> new Date(a.date) - new Date(b.date));
 
-  // Hide past events
   const upcoming = events.filter(e => isUpcoming(e.date));
 
-  // Featured (first upcoming event)
   const f = document.getElementById("featured");
-  if (f && upcoming[0]) {
-    f.innerHTML = featured(upcoming[0]);
-  }
+  if (f && upcoming[0]) f.innerHTML = featured(upcoming[0]);
 
-  // Show next 6 upcoming events
   const list = document.getElementById("home-events");
-  if (list) {
-    list.innerHTML = upcoming.slice(0,6).map(card).join("");
-  }
+  if (list) list.innerHTML = upcoming.slice(0,6).map(card).join("");
 }
 
 init();
