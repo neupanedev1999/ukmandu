@@ -51,10 +51,12 @@ async function init(){
   holder.innerHTML = `
     <div class="card">
       ${e.image ? `<img class="event-img" src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy">` : ""}
+
       <div class="badges">
         <span class="badge">${esc(e.city || "")}</span>
         <span class="pill">Event</span>
       </div>
+
       <h3 style="font-size:22px;">${esc(e.title)}</h3>
       <div class="meta">${esc(when(e.date))}</div>
       <div class="meta">${esc(e.venue || "")}</div>
@@ -68,11 +70,11 @@ async function init(){
     </div>
   `;
 
-  // ✅ Count view ONLY here (not on events list page)
+  // ✅ Increment view ONLY here
   try {
     const { data, error } = await supabase.rpc("increment_event_view", { slug_in: slug });
-    const viewsEl = document.getElementById("views");
     if (error) throw error;
+    const viewsEl = document.getElementById("views");
     if (viewsEl) viewsEl.textContent = `👁 ${Number(data ?? 0).toLocaleString()} views`;
   } catch (err) {
     console.error(err);
