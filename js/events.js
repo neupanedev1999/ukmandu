@@ -65,26 +65,24 @@ function render(){
 
   filtered.sort((a,b)=> new Date(a.date) - new Date(b.date));
 
-  listEl.innerHTML = filtered.map(e => `
-    <div class="card" id="${e.slug}">
-      <div class="badges">
-        <span class="badge">${esc(badgeDate(e.date))}</span>
-        <span class="pill">${esc(e.city)}</span>
-      </div>
+ listEl.innerHTML = filtered.map(e => `
+  <div class="card" id="${e.slug}">
+    ${e.image ? `<img class="event-img" src="${e.image}" alt="${esc(e.title)}">` : ""}
 
-      <h3>${esc(e.title)}</h3>
-      <div class="meta">${esc(when(e.date))}</div>
-      <div class="meta">${esc(e.venue || "")}</div>
-
-      <div class="meta view-count" id="views-${e.slug}">
-        👁 Loading views...
-      </div>
-
-      <div style="margin-top:12px;">
-        ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy tickets</a>` : ""}
-      </div>
+    <div class="badges">
+      <span class="badge">${esc(badgeDate(e.date))}</span>
+      <span class="pill">${esc(e.city)}</span>
     </div>
-  `).join("");
+
+    <h3>${esc(e.title)}</h3>
+    <div class="meta">${esc(when(e.date))}</div>
+    <div class="meta">${esc(e.venue || "")}</div>
+
+    <div style="margin-top:12px;">
+      ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${e.ticketUrl}">Buy tickets</a>` : ""}
+    </div>
+  </div>
+`).join("");
 
   filtered.forEach(e => incrementAndShowViews(e.slug));
 }
@@ -105,3 +103,4 @@ async function init(){
 }
 
 init();
+
