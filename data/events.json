@@ -19,14 +19,14 @@
   },
   {
     "title": "Neetesh Jung Kunwar Live in London",
-    "image": "images/neetesh-london-2026.jpg"
+    "image": "images/neetesh-london-2026.jpg",
     "slug": "neetesh-jung-kunwar-london-2026",
     "city": "London",
     "venue": "Springwest Academy, TW13 7EF",
     "date": "2026-04-25T21:00:00+01:00",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
     "organiser": "BSK Entertainment"
-  }
+  },
   {
   "id": "spring-festival-2026-farnborough",
   "title": "Spring Festival 2026",
@@ -37,9 +37,10 @@
   "address": "Cherrywood Road, Farnborough, GU14 8UD",
   "headline": "Albatross",
   "image": "images/spring-festival-2026.jpg",
-  "ticket_url": "https://www.tickettailor.com/events/theyatraeventsuk/1932095"
+  "ticketUrl": "https://www.tickettailor.com/events/theyatraeventsuk/1932095",
 }
 ]
+
 
 
 
