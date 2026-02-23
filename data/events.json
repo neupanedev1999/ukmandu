@@ -4,28 +4,48 @@
     "slug": "neetesh-jung-kunwar-birmingham-2026",
     "city": "Birmingham",
     "venue": "O2 Institute, B5 6DY",
+    "address": "",
     "date": "2026-04-13T19:00:00+01:00",
+    "organiser": "BSK Entertainment x Jhyammai Event",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment x jhyammai event"
+    "image": "",
+    "description": ""
   },
   {
     "title": "Neetesh Jung Kunwar Live in Manchester",
     "slug": "neetesh-jung-kunwar-manchester-2026",
     "city": "Manchester",
     "venue": "Eagle Deansgate, M3 4HE",
+    "address": "",
     "date": "2026-04-18T19:00:00+01:00",
+    "organiser": "BSK Entertainment x Jhyammai Event",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment x jhyammai event"
+    "image": "",
+    "description": ""
   },
   {
     "title": "Neetesh Jung Kunwar Live in London",
     "slug": "neetesh-jung-kunwar-london-2026",
     "city": "London",
     "venue": "Springwest Academy, TW13 7EF",
+    "address": "",
     "date": "2026-04-25T21:00:00+01:00",
+    "organiser": "BSK Entertainment x Jhyammai Event",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment x jhyammai event",
-    "image": "images/neetesh-london-2026.jpg"
+    "image": "images/neetesh-london-2026.jpg",
+    "description": ""
+  },
+  {
+    "title": "Goat X Legend - Bikram Sambat 2083",
+    "slug": "goat-x-legend-bikram-sambat-2083",
+    "city": "London",
+    "venue": "The Royal Regency E12 6TH, London",
+    "address": "",
+    "date": "2026-04-14T19:00:00+01:00",
+    "organiser": "Astra Entertainment",
+    "ticketUrl": "https://www.astraentertainmentlimited.com/",
+    "image": "images/goat-x-legend-london-2026.jpg",
+    "description": "Anuprastha X Yabi The Goat live for Nepali New Year 2083. DJ Skazii performing."
   },
   {
     "title": "Spring Festival 2026",
@@ -34,23 +54,9 @@
     "venue": "Farnborough Football Club",
     "address": "Cherrywood Road, Farnborough, GU14 8UD",
     "date": "2026-05-02T13:00:00+01:00",
-    "ticketUrl": "https://www.tickettailor.com/events/theyatraeventsuk/1932095",
     "organiser": "The Yatra Events UK",
-    "image": "images/spring-festival-2026.jpg"
-  },
-  {
-    "id": "goat-x-legend-london-2026",
-    "slug": "goat-x-legend-bikram-sambat-2083",
-    "city": "London",
-    "title": "Goat X Legend - Bikram Sambat 2083",
-    "date": "2026-04-14",
-    "venue": "The Royal Regency E12 6TH, London",
-    "image": "images/goat-x-legend-london-2026.jpg",
-    "ticketUrl": "https://www.astraentertainmentlimited.com/",
-    "organiser": "Astra Entertainment",
-    "description": "Anuprastha X Yabi The Goat live for Nepali New Year 2083. DJ Skazii performing."
+    "ticketUrl": "https://www.tickettailor.com/events/theyatraeventsuk/1932095",
+    "image": "images/spring-festival-2026.jpg",
+    "description": ""
   }
 ]
-
-
-
