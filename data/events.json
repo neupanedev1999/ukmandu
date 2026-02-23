@@ -6,7 +6,7 @@
     "venue": "O2 Institute, B5 6DY",
     "date": "2026-04-13T19:00:00+01:00",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment"
+    "organiser": "BSK Entertainment x jhyammai event"
   },
   {
     "title": "Neetesh Jung Kunwar Live in Manchester",
@@ -15,7 +15,7 @@
     "venue": "Eagle Deansgate, M3 4HE",
     "date": "2026-04-18T19:00:00+01:00",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment"
+    "organiser": "BSK Entertainment x jhyammai event"
   },
   {
     "title": "Neetesh Jung Kunwar Live in London",
@@ -24,7 +24,7 @@
     "venue": "Springwest Academy, TW13 7EF",
     "date": "2026-04-25T21:00:00+01:00",
     "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "organiser": "BSK Entertainment",
+    "organiser": "BSK Entertainment x jhyammai event",
     "image": "images/neetesh-london-2026.jpg"
   },
   {
@@ -40,14 +40,17 @@
   },
   {
     "id": "goat-x-legend-london-2026",
+    "slug": "goat-x-legend-bikram-sambat-2083",
     "city": "London",
     "title": "Goat X Legend - Bikram Sambat 2083",
     "date": "2026-04-14",
     "venue": "The Royal Regency E12 6TH, London",
     "image": "images/goat-x-legend-london-2026.jpg",
     "ticketUrl": "https://www.astraentertainmentlimited.com/",
+    "organiser": "Astra Entertainment",
     "description": "Anuprastha X Yabi The Goat live for Nepali New Year 2083. DJ Skazii performing."
   }
 ]
+
 
 
