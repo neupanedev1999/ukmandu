@@ -1,15 +1,15 @@
 [
   {
-    "title": "Neetesh Jung Kunwar Live in Birmingham",
-    "slug": "neetesh-jung-kunwar-birmingham-2026",
-    "city": "Birmingham",
-    "venue": "O2 Institute, B5 6DY",
-    "address": "",
-    "date": "2026-04-13T19:00:00+01:00",
-    "organiser": "BSK Entertainment x Jhyammai Event",
-    "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
-    "image": "",
-    "description": ""
+  "title": "Neetesh Jung Kunwar Live in Birmingham",
+  "slug": "neetesh-jung-kunwar-birmingham-2026",
+  "city": "Birmingham",
+  "venue": "O2 Institute, B5 6DY",
+  "address": "",
+  "date": "2026-04-13T19:00:00+01:00",
+  "organiser": "BSK Entertainment x Jhyammai Event",
+  "ticketUrl": "https://www.tickettailor.com/events/bskentertainment",
+  "image": "images/neetesh-birmingham-2026.jpg",
+  "description": ""
   },
   {
     "title": "Neetesh Jung Kunwar Live in Manchester",
@@ -60,3 +60,4 @@
     "description": ""
   }
 ]
+
