@@ -7,7 +7,11 @@ const supabase = createClient(
 
 function esc(str){
   return String(str ?? "").replace(/[&<>"']/g, m => ({
-    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#039;"
   }[m]));
 }
 
@@ -35,7 +39,12 @@ async function init(){
   const slug = getSlug();
 
   if (!slug) {
-    holder.innerHTML = `<div class="card"><h3>Event not found</h3><div class="meta">Missing slug in URL.</div></div>`;
+    holder.innerHTML = `
+      <div class="card">
+        <h3>Event not found</h3>
+        <div class="meta">Missing slug in URL.</div>
+      </div>
+    `;
     return;
   }
 
@@ -44,13 +53,33 @@ async function init(){
   const e = events.find(x => x.slug === slug);
 
   if (!e) {
-    holder.innerHTML = `<div class="card"><h3>Event not found</h3><div class="meta">No event matches: ${esc(slug)}</div></div>`;
+    holder.innerHTML = `
+      <div class="card">
+        <h3>Event not found</h3>
+        <div class="meta">No event matches: ${esc(slug)}</div>
+      </div>
+    `;
     return;
   }
 
+  // Build WhatsApp share message
+  const shareMessage =
+`🔥 ${e.title}
+📍 ${e.city}
+🗓 ${when(e.date)}
+📌 ${e.venue}
+🎟 ${e.ticketUrl || "More info"}
+
+Event details:
+https://ukmandu.online/event.html?slug=${encodeURIComponent(e.slug)}`;
+
+  const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
+
   holder.innerHTML = `
     <div class="card">
-      ${e.image ? `<img class="event-img" src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy">` : ""}
+      ${e.image ? `
+        <img class="event-img" src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy">
+      ` : ""}
 
       <div class="badges">
         <span class="badge">${esc(e.city || "")}</span>
@@ -61,11 +90,36 @@ async function init(){
       <div class="meta">${esc(when(e.date))}</div>
       <div class="meta">${esc(e.venue || "")}</div>
 
-      <div class="meta view-count" id="views">👁 Loading views...</div>
+      ${e.organiser ? `
+        <div class="meta" style="margin-top:6px;">
+          Organiser: ${esc(e.organiser)}
+        </div>
+      ` : ""}
+
+      ${e.description ? `
+        <div class="meta" style="margin-top:10px;">
+          ${esc(e.description)}
+        </div>
+      ` : ""}
+
+      <div class="meta view-count" id="views" style="margin-top:10px;">
+        👁 Loading views...
+      </div>
 
       <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-        ${e.ticketUrl ? `<a class="btn primary" target="_blank" rel="noreferrer" href="${esc(e.ticketUrl)}">Buy tickets</a>` : ""}
-        <a class="btn ghost" href="events.html">Browse all events</a>
+        ${e.ticketUrl ? `
+          <a class="btn primary" target="_blank" rel="noreferrer" href="${esc(e.ticketUrl)}">
+            Buy tickets
+          </a>
+        ` : ""}
+
+        <a class="btn ghost" target="_blank" rel="noreferrer" href="${whatsappUrl}">
+          Share WhatsApp
+        </a>
+
+        <a class="btn ghost" href="events.html">
+          Browse all events
+        </a>
       </div>
     </div>
   `;
@@ -73,13 +127,19 @@ async function init(){
   // ✅ Increment view ONLY here
   try {
     const { data, error } = await supabase.rpc("increment_event_view", { slug_in: slug });
+
     if (error) throw error;
+
     const viewsEl = document.getElementById("views");
-    if (viewsEl) viewsEl.textContent = `👁 ${Number(data ?? 0).toLocaleString()} views`;
+    if (viewsEl) {
+      viewsEl.textContent = `👁 ${Number(data ?? 0).toLocaleString()} views`;
+    }
   } catch (err) {
     console.error(err);
     const viewsEl = document.getElementById("views");
-    if (viewsEl) viewsEl.textContent = "👁 views unavailable";
+    if (viewsEl) {
+      viewsEl.textContent = "👁 views unavailable";
+    }
   }
 }
 
