@@ -48,27 +48,38 @@ function card(e){
 
 function featured(e){
   return `
-    <div>
-      <div class="kicker" style="margin:0 0 6px; letter-spacing:.2em;">FEATURED</div>
-      <div style="font-size:28px;font-weight:900;">${esc(e.title)}</div>
-      <div class="meta" style="margin-top:8px;">
-        ${esc(e.city || "")} • ${esc(when(e.date))}
-      </div>
-      <div class="meta">${esc(e.venue || "")}</div>
-
-      ${e.organiser ? `
-        <div class="meta" style="margin-top:10px;opacity:.8;">
-          Organiser: ${esc(e.organiser)}
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;">
+      
+      ${e.image ? `
+        <div>
+          <img class="event-img" src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy">
         </div>
       ` : ""}
 
-      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
-        ${e.ticketUrl ? `
-          <a class="btn primary" target="_blank" rel="noreferrer" href="${esc(e.ticketUrl)}">
-            Buy tickets
-          </a>
+      <div>
+        <div class="kicker" style="margin:0 0 6px; letter-spacing:.2em;">FEATURED</div>
+        <div style="font-size:28px;font-weight:900;">${esc(e.title)}</div>
+        <div class="meta" style="margin-top:8px;">
+          ${esc(e.city || "")} • ${esc(when(e.date))}
+        </div>
+        <div class="meta">${esc(e.venue || "")}</div>
+
+        ${e.organiser ? `
+          <div class="meta" style="margin-top:10px;opacity:.8;">
+            Organiser: ${esc(e.organiser)}
+          </div>
         ` : ""}
-        <a class="btn ghost" href="events.html">Browse all</a>
+
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;">
+          ${e.ticketUrl ? `
+            <a class="btn primary" target="_blank" rel="noreferrer" href="${esc(e.ticketUrl)}">
+              Buy tickets
+            </a>
+          ` : ""}
+          <a class="btn ghost" href="event.html?slug=${encodeURIComponent(e.slug)}">
+            View details
+          </a>
+        </div>
       </div>
     </div>
   `;
@@ -93,3 +104,4 @@ async function init(){
 }
 
 init();
+
