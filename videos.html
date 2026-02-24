@@ -2,21 +2,57 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYZTR33H0K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYZTR33H0K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NYZTR33H0K');
+  </script>
 
-  gtag('config', 'G-NYZTR33H0K');
-</script>
+  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7341393896537895"
-     crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script>
+
   <meta charset="utf-8" />
-  <link rel="icon" type="image/png" href="assets/logo.png">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <title>UKmandu — Videos</title>
+  <meta name="description" content="UKmandu podcasts, interviews and popular Nepali community videos in the UK." />
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Page-only video grid */
+    .video-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+    @media (max-width:900px){ .video-grid{ grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px){ .video-grid{ grid-template-columns:1fr; } }
+
+    .video-card{ padding:12px; }
+    .video-frame{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      border-radius:14px;
+      display:block;
+      background:rgba(255,255,255,.04);
+    }
+    .video-title{
+      margin:10px 0 0;
+      font-weight:900;
+      font-size:14px;
+    }
+    .video-sub{
+      margin:6px 0 0;
+      color:rgba(255,255,255,.7);
+      font-size:12px;
+      line-height:1.5;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,7 +65,7 @@
       <a class="active" href="videos.html">Videos</a>
       <a href="submit-event.html">Submit</a>
       <a href="about.html">About</a>
-      <a class="btn" href="index.html">Home</a>
+      <a class="btn primary" href="events.html">Browse Events</a>
     </nav>
   </header>
 
@@ -37,44 +73,111 @@
     <div class="page-head">
       <div>
         <h1>Videos</h1>
-        <p>Highlights, interviews and UK Nepali community content.</p>
+        <p>Podcasts, interviews and UK Nepali community content.</p>
       </div>
       <a class="link" target="_blank" rel="noreferrer" href="https://www.youtube.com/@Ukmandu/videos">Open YouTube →</a>
     </div>
 
-    <div class="video">
-      <iframe
-        src="https://www.youtube-nocookie.com/embed/videoseries?list=PLJEeO8_QHsRGa1n0iNVNnECEqHemyzcBw"
-        title="UKmandu Videos"
-        loading="lazy"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <!-- PODCAST PLAYLIST -->
+    <section style="margin-top:8px;">
+      <div class="section-head">
+        <h2 style="margin:0;">🎙️ Podcast playlist</h2>
+        <a class="link" target="_blank" rel="noreferrer" href="https://www.youtube.com/@Ukmandu/playlists">See playlists →</a>
+      </div>
+
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/videoseries?list=PLJEeO8_QHsRGa1n0iNVNnECEqHemyzcBw"
+          title="UKmandu Podcast Playlist"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- MOST POPULAR -->
+    <section style="margin-top:30px;">
+      <div class="section-head">
+        <h2 style="margin:0;">🔥 Most popular</h2>
+        <div class="meta">Top videos selected from our channel</div>
+      </div>
+
+      <div class="video-grid">
+        <!-- Replace VIDEO_ID_* with your real YouTube video IDs -->
+        <div class="card video-card">
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_1"
+            title="Popular video 1" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div class="video-title">Popular video title 1</div>
+          <div class="video-sub">Optional: short 1-line description.</div>
+        </div>
+
+        <div class="card video-card">
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_2"
+            title="Popular video 2" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div class="video-title">Popular video title 2</div>
+          <div class="video-sub">Optional: short 1-line description.</div>
+        </div>
+
+        <div class="card video-card">
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_3"
+            title="Popular video 3" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div class="video-title">Popular video title 3</div>
+          <div class="video-sub">Optional: short 1-line description.</div>
+        </div>
+
+        <div class="card video-card">
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_4"
+            title="Popular video 4" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div class="video-title">Popular video title 4</div>
+          <div class="video-sub">Optional: short 1-line description.</div>
+        </div>
+
+        <div class="card video-card">
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_5"
+            title="Popular video 5" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div class="video-title">Popular video title 5</div>
+          <div class="video-sub">Optional: short 1-line description.</div>
+        </div>
+
+        <div class="card video-card">
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/VIDEO_ID_6"
+            title="Popular video 6" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+          <div class="video-title">Popular video title 6</div>
+          <div class="video-sub">Optional: short 1-line description.</div>
+        </div>
+      </div>
+
+      <div class="tip" style="margin-top:14px;">
+        Want more? Visit our channel:
+        <a class="link" target="_blank" rel="noreferrer" href="https://www.youtube.com/@Ukmandu/videos">UKmandu on YouTube →</a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer mini">
     <div class="footer-bottom">© <span id="year"></span> UKmandu</div>
-    <a class="footer-link" target="_blank" rel="noreferrer"
-   href="https://buymeacoffee.com/neupanedev">
-   ☕ Support UKmandu
-</a>
-    <a class="footer-link" href="privacy-policy.html">Privacy Policy</a>
+
+    <div style="max-width:1100px;margin:10px auto 0;text-align:center;">
+      <a class="footer-link" target="_blank" rel="noreferrer" href="https://buymeacoffee.com/neupanedev">☕ Support UKmandu</a>
+      <a class="footer-link" href="privacy-policy.html">Privacy Policy</a>
+    </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
- 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
