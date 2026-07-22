@@ -10,66 +10,68 @@
 
   <meta
     name="description"
-    content="UKMandu is the voice of Nepalese in the UK, sharing podcasts, stories, events, community resources and trusted partnerships."
+    content="UKMandu is a Nepalese community media platform in the UK, featuring podcasts, stories, events, community resources and trusted partners."
   >
 
-  <title>UKMandu | Voice of Nepalese in the UK</title>
+  <meta
+    name="keywords"
+    content="UKMandu, Nepalese in UK, Nepali podcast UK, UK Nepali events, Nepalese community UK"
+  >
+
+  <meta name="author" content="UKMandu">
+
+  <title>UKMandu | Voice of Nepalese in UK</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- TOP UTILITY BAR -->
+  <!-- Top Utility Bar -->
   <div class="utility-bar">
-    <div class="container utility-content">
+    <div class="container utility-bar-inner">
 
-      <div class="utility-item">
-        <span>🇬🇧 London:</span>
-        <strong id="londonTime">--:--:--</strong>
-      </div>
+      <p>
+        Voice of Nepalese in UK
+      </p>
 
-      <div class="utility-divider">|</div>
-
-      <div class="utility-item">
-        <span>🇳🇵 Kathmandu:</span>
-        <strong id="kathmanduTime">--:--:--</strong>
-      </div>
-
-      <div class="utility-divider">|</div>
-
-      <div class="utility-item">
-        <span>💱 GBP → NPR:</span>
-        <strong id="exchangeRate">203.00</strong>
+      <div class="utility-links">
+        <a href="#newsletter">Newsletter</a>
+        <a href="contact.html">Contact</a>
       </div>
 
     </div>
   </div>
 
+  <!-- Main Header -->
+  <header class="site-header" id="siteHeader">
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container navbar">
+    <div class="container header-inner">
 
-      <a href="index.html" class="site-logo">
+      <!-- Logo -->
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="UKMandu Home"
+      >
         <img
           src="assets/ukmandu-logo.png"
-          alt="UKMandu Logo"
+          alt="UKMandu logo"
+          class="brand-logo"
         >
       </a>
 
-      <button
-        class="mobile-menu-button"
-        id="mobileMenuButton"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <!-- Desktop Navigation -->
+      <nav class="desktop-navigation" aria-label="Main navigation">
 
-      <nav class="main-navigation" id="mainNavigation">
         <a href="index.html" class="active">Home</a>
         <a href="podcast.html">Podcast</a>
         <a href="stories.html">Stories</a>
@@ -79,264 +81,533 @@
         <a href="work-with-us.html">Work With Us</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+
       </nav>
 
+      <!-- Header Action -->
       <div class="header-actions">
 
         <a
-          href="https://www.youtube.com/@Ukmandu"
-          target="_blank"
-          class="header-button secondary-button"
+          href="#featured-podcast"
+          class="button button-small button-primary desktop-watch-button"
         >
           Watch Podcast
         </a>
 
-        <a
-          href="podcast.html#be-our-guest"
-          class="header-button primary-button"
+        <button
+          class="mobile-menu-button"
+          id="mobileMenuButton"
+          aria-label="Open mobile navigation"
+          aria-controls="mobileNavigation"
+          aria-expanded="false"
         >
-          Become a Guest
-        </a>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
       </div>
 
     </div>
-  </header>
 
+    <!-- Mobile Navigation -->
+    <nav
+      class="mobile-navigation"
+      id="mobileNavigation"
+      aria-label="Mobile navigation"
+    >
+
+      <a href="index.html" class="active">Home</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="stories.html">Stories</a>
+      <a href="events.html">Events</a>
+      <a href="community.html">Community</a>
+      <a href="partners.html">Partners</a>
+      <a href="work-with-us.html">Work With Us</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+      <a
+        href="#featured-podcast"
+        class="button button-primary mobile-watch-button"
+      >
+        Watch Podcast
+      </a>
+
+    </nav>
+
+  </header>
 
   <main>
 
-    <!-- HERO -->
+    <!-- Hero -->
     <section class="hero-section">
-      <div class="container hero-layout">
+
+      <div class="hero-decoration hero-decoration-one"></div>
+      <div class="hero-decoration hero-decoration-two"></div>
+
+      <div class="container hero-grid">
 
         <div class="hero-content">
 
-          <span class="eyebrow">
-            UK NEPALESE COMMUNITY MEDIA PLATFORM
-          </span>
-
-          <h1>
-            The Voice of
-            <span>Nepalese in the UK</span>
-          </h1>
-
-          <p>
-            Real stories, honest conversations and useful information
-            connecting Nepalese students, professionals, businesses and
-            communities across the United Kingdom.
+          <p class="eyebrow">
+            Nepalese Community Media Platform
           </p>
 
-          <div class="hero-actions">
+          <h1>
+            Connecting Nepalese voices, stories and opportunities in the UK.
+          </h1>
+
+          <p class="hero-description">
+            UKMandu brings together authentic podcasts, inspiring stories,
+            community events, practical UK resources and trusted organisations.
+          </p>
+
+          <div class="hero-buttons">
 
             <a
-              href="https://www.youtube.com/@Ukmandu"
-              target="_blank"
-              class="button primary-button"
+              href="#featured-podcast"
+              class="button button-primary"
             >
-              Watch Latest Podcast
+              ▶ Watch Podcast
             </a>
 
             <a
-              href="podcast.html#be-our-guest"
-              class="button light-button"
+              href="podcast.html#guest-application"
+              class="button button-secondary"
             >
-              Become a Guest
+              🎙 Become a Guest
             </a>
 
-            <a
-              href="events.html"
-              class="button outline-button"
+          </div>
+
+          <div class="hero-trust">
+
+            <div>
+              <strong>Authentic</strong>
+              <span>Community conversations</span>
+            </div>
+
+            <div>
+              <strong>Useful</strong>
+              <span>Guides and opportunities</span>
+            </div>
+
+            <div>
+              <strong>Connected</strong>
+              <span>People and organisations</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="hero-media">
+
+          <div class="hero-image-card">
+
+            <img
+              src="assets/ukmandu-studio.jpg"
+              alt="UKMandu podcast studio"
             >
-              Explore Events
+
+            <div class="hero-card-overlay">
+
+              <span class="live-badge">UKMandu Podcast</span>
+
+              <h2>
+                Real people. Real journeys. Real conversations.
+              </h2>
+
+              <a href="podcast.html">
+                Explore all episodes →
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- UKMandu at a Glance -->
+    <section class="section section-light">
+
+      <div class="container">
+
+        <div class="section-heading centered">
+
+          <p class="eyebrow">UKMandu at a Glance</p>
+
+          <h2>
+            One platform. Five community pillars.
+          </h2>
+
+          <p>
+            Everything we create is designed to inform, connect and support
+            Nepalese people living in or planning to come to the UK.
+          </p>
+
+        </div>
+
+        <div class="pillars-grid">
+
+          <a href="podcast.html" class="pillar-card">
+            <div class="pillar-icon">🎙</div>
+            <h3>Podcasts</h3>
+            <p>Authentic conversations with community members and experts.</p>
+            <span>Explore podcasts →</span>
+          </a>
+
+          <a href="stories.html" class="pillar-card">
+            <div class="pillar-icon">📖</div>
+            <h3>Stories</h3>
+            <p>Articles, experiences and useful guides with long-term value.</p>
+            <span>Read stories →</span>
+          </a>
+
+          <a href="events.html" class="pillar-card">
+            <div class="pillar-icon">🎉</div>
+            <h3>Events</h3>
+            <p>Discover cultural, professional and community events in the UK.</p>
+            <span>Find events →</span>
+          </a>
+
+          <a href="community.html" class="pillar-card">
+            <div class="pillar-icon">🤝</div>
+            <h3>Community</h3>
+            <p>Resources, important updates, opportunities and useful contacts.</p>
+            <span>View resources →</span>
+          </a>
+
+          <a href="partners.html" class="pillar-card">
+            <div class="pillar-icon">🌟</div>
+            <h3>Partners</h3>
+            <p>Trusted organisations working with UKMandu and the community.</p>
+            <span>Meet partners →</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Featured Podcast -->
+    <section
+      class="section section-dark"
+      id="featured-podcast"
+    >
+
+      <div class="container">
+
+        <div class="section-heading light-heading">
+
+          <p class="eyebrow">Featured Podcast</p>
+
+          <div class="heading-row">
+
+            <div>
+              <h2>Conversations that matter.</h2>
+              <p>
+                Honest experiences, practical advice and meaningful community stories.
+              </p>
+            </div>
+
+            <a
+              href="podcast.html"
+              class="text-link text-link-light"
+            >
+              View all episodes →
             </a>
 
           </div>
 
         </div>
 
+        <article class="featured-podcast-card">
 
-        <div class="hero-feature">
+          <div class="featured-video">
 
-          <article class="featured-video-card">
+            <div class="video-placeholder">
 
-            <div class="featured-video-placeholder">
-
-              <span class="featured-label">
-                Featured Podcast
-              </span>
+              <img
+                src="assets/featured-podcast.jpg"
+                alt="Featured UKMandu podcast episode"
+              >
 
               <a
                 href="https://www.youtube.com/@Ukmandu"
-                target="_blank"
                 class="play-button"
+                aria-label="Watch featured podcast"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 ▶
               </a>
 
             </div>
 
-            <div class="featured-video-content">
+          </div>
 
-              <span>Latest UKMandu Podcast</span>
+          <div class="featured-podcast-content">
 
-              <h2>
-                Real conversations with Nepalese voices across the UK
-              </h2>
+            <span class="content-tag">
+              Featured Episode
+            </span>
+
+            <h3>
+              Real journeys of Nepalese people building their lives in the UK
+            </h3>
+
+            <p>
+              Hear honest stories about education, careers, business,
+              immigration, personal challenges and success in the United Kingdom.
+            </p>
+
+            <div class="episode-meta">
+              <span>UKMandu Podcast</span>
+              <span>•</span>
+              <span>Latest Episode</span>
+            </div>
+
+            <div class="card-buttons">
 
               <a
                 href="https://www.youtube.com/@Ukmandu"
+                class="button button-primary"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                Watch on YouTube →
+                Watch on YouTube
+              </a>
+
+              <a
+                href="podcast.html"
+                class="button button-outline-light"
+              >
+                Browse Episodes
               </a>
 
             </div>
 
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- STATISTICS -->
-    <section class="statistics-section">
-      <div class="container statistics-grid">
-
-        <div class="statistic-card">
-          <strong>6.7K+</strong>
-          <span>YouTube Subscribers</span>
-        </div>
-
-        <div class="statistic-card">
-          <strong>100+</strong>
-          <span>Podcast Episodes</span>
-        </div>
-
-        <div class="statistic-card">
-          <strong>2M+</strong>
-          <span>Social Media Views</span>
-        </div>
-
-        <div class="statistic-card">
-          <strong>20+</strong>
-          <span>Events Promoted</span>
-        </div>
-
-        <div class="statistic-card">
-          <strong>5+</strong>
-          <span>Official Partners</span>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- PODCASTS -->
-    <section class="section">
-      <div class="container">
-
-        <div class="section-heading-row">
-
-          <div>
-            <span class="section-label">UKMANDU PODCAST</span>
-            <h2>Latest conversations</h2>
           </div>
 
-          <a href="podcast.html" class="text-button">
-            View all podcasts →
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Browse by Topic -->
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Browse by Topic</p>
+
+          <div class="heading-row">
+
+            <div>
+              <h2>Find content that matters to you.</h2>
+              <p>
+                Explore conversations, stories and resources across popular topics.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="topics-grid">
+
+          <a href="stories.html?category=student-life" class="topic-card">
+            <span>🎓</span>
+            <h3>Student Life</h3>
+            <p>Study, accommodation, work and life as a student in the UK.</p>
+          </a>
+
+          <a href="stories.html?category=professional" class="topic-card">
+            <span>💼</span>
+            <h3>Careers</h3>
+            <p>Employment journeys, skills, professional growth and advice.</p>
+          </a>
+
+          <a href="stories.html?category=immigration" class="topic-card">
+            <span>🛂</span>
+            <h3>Immigration</h3>
+            <p>Important information and personal immigration experiences.</p>
+          </a>
+
+          <a href="stories.html?category=business" class="topic-card">
+            <span>📈</span>
+            <h3>Business</h3>
+            <p>Nepalese entrepreneurs, businesses and opportunities in the UK.</p>
+          </a>
+
+          <a href="stories.html?category=community" class="topic-card">
+            <span>🏘</span>
+            <h3>Community</h3>
+            <p>Community updates, services, organisations and local initiatives.</p>
+          </a>
+
+          <a href="stories.html?category=health" class="topic-card">
+            <span>❤️</span>
+            <h3>Wellbeing</h3>
+            <p>Health, safety, personal wellbeing and community support.</p>
           </a>
 
         </div>
 
+      </div>
 
-        <div class="podcast-grid">
+    </section>
 
-          <article class="podcast-card">
+    <!-- Latest Stories -->
+    <section class="section section-soft">
 
-            <div class="podcast-image-placeholder">
-              Podcast Thumbnail
+      <div class="container">
+
+        <div class="section-heading">
+
+          <p class="eyebrow">Latest Stories</p>
+
+          <div class="heading-row">
+
+            <div>
+              <h2>Stories, experiences and practical guidance.</h2>
+              <p>
+                Content created to inform, inspire and support the community.
+              </p>
             </div>
 
-            <div class="podcast-card-content">
+            <a href="stories.html" class="text-link">
+              View all stories →
+            </a>
 
-              <span class="content-category">
+          </div>
+
+        </div>
+
+        <div class="content-card-grid">
+
+          <article class="story-card">
+
+            <a href="stories.html" class="story-image">
+
+              <img
+                src="assets/story-student-life.jpg"
+                alt="Nepalese student life in the UK"
+              >
+
+              <span class="image-category">
                 Student Life
               </span>
 
+            </a>
+
+            <div class="story-content">
+
+              <p class="story-date">
+                UKMandu Guide
+              </p>
+
               <h3>
-                Real experiences of studying and building a life in the UK
+                <a href="stories.html">
+                  What Nepalese students should know before coming to the UK
+                </a>
               </h3>
 
               <p>
-                Honest conversations about education, jobs, accommodation
-                and adapting to life in Britain.
+                A practical overview of accommodation, employment,
+                budgeting and student life.
               </p>
 
-              <a href="podcast.html">
-                Watch episode →
+              <a href="stories.html" class="text-link">
+                Read story →
               </a>
 
             </div>
 
           </article>
 
+          <article class="story-card">
 
-          <article class="podcast-card">
+            <a href="stories.html" class="story-image">
 
-            <div class="podcast-image-placeholder">
-              Podcast Thumbnail
-            </div>
+              <img
+                src="assets/story-career.jpg"
+                alt="Professional career journey in the UK"
+              >
 
-            <div class="podcast-card-content">
-
-              <span class="content-category">
+              <span class="image-category">
                 Professional Journey
               </span>
 
+            </a>
+
+            <div class="story-content">
+
+              <p class="story-date">
+                Community Story
+              </p>
+
               <h3>
-                Building a successful professional career in the UK
+                <a href="stories.html">
+                  Building a professional career in the UK from the beginning
+                </a>
               </h3>
 
               <p>
-                Career stories, challenges and lessons from Nepalese
-                professionals working across the United Kingdom.
+                Lessons, challenges and practical advice from real experiences.
               </p>
 
-              <a href="podcast.html">
-                Watch episode →
+              <a href="stories.html" class="text-link">
+                Read story →
               </a>
 
             </div>
 
           </article>
 
+          <article class="story-card">
 
-          <article class="podcast-card">
+            <a href="stories.html" class="story-image">
 
-            <div class="podcast-image-placeholder">
-              Podcast Thumbnail
-            </div>
+              <img
+                src="assets/story-business.jpg"
+                alt="Nepalese business owner in the UK"
+              >
 
-            <div class="podcast-card-content">
-
-              <span class="content-category">
-                Success Story
+              <span class="image-category">
+                Business
               </span>
 
+            </a>
+
+            <div class="story-content">
+
+              <p class="story-date">
+                Business Spotlight
+              </p>
+
               <h3>
-                From struggle to success in the United Kingdom
+                <a href="stories.html">
+                  How Nepalese businesses are supporting the UK community
+                </a>
               </h3>
 
               <p>
-                Inspiring stories from people creating opportunities and
-                helping the Nepalese community.
+                Meet the organisations creating jobs, services and opportunities.
               </p>
 
-              <a href="podcast.html">
-                Watch episode →
+              <a href="stories.html" class="text-link">
+                Read story →
               </a>
 
             </div>
@@ -346,632 +617,492 @@
         </div>
 
       </div>
+
     </section>
 
+    <!-- Upcoming Events -->
+    <section class="section">
 
-    <!-- TOPICS -->
-    <section class="section light-background">
       <div class="container">
 
-        <div class="centered-heading">
+        <div class="section-heading">
 
-          <span class="section-label">
-            EXPLORE UKMANDU
-          </span>
+          <p class="eyebrow">Upcoming Events</p>
 
-          <h2>Browse by topic</h2>
+          <div class="heading-row">
+
+            <div>
+              <h2>Connect with the community.</h2>
+              <p>
+                Discover concerts, cultural programmes and community activities.
+              </p>
+            </div>
+
+            <a href="events.html" class="text-link">
+              Browse all events →
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="events-grid">
+
+          <article class="event-card">
+
+            <a href="events.html" class="event-image">
+
+              <img
+                src="assets/event-one.jpg"
+                alt="Upcoming Nepalese community event"
+              >
+
+              <div class="event-date-box">
+                <strong>25</strong>
+                <span>JUL</span>
+              </div>
+
+            </a>
+
+            <div class="event-content">
+
+              <span class="content-tag">Featured Event</span>
+
+              <h3>
+                Nepalese Community Event in London
+              </h3>
+
+              <p class="event-detail">
+                📍 London, United Kingdom
+              </p>
+
+              <p class="event-detail">
+                🕒 Doors open at 6:00 PM
+              </p>
+
+              <a href="events.html" class="text-link">
+                View event →
+              </a>
+
+            </div>
+
+          </article>
+
+          <article class="event-card">
+
+            <a href="events.html" class="event-image">
+
+              <img
+                src="assets/event-two.jpg"
+                alt="Nepalese music event in the UK"
+              >
+
+              <div class="event-date-box">
+                <strong>08</strong>
+                <span>AUG</span>
+              </div>
+
+            </a>
+
+            <div class="event-content">
+
+              <span class="content-tag">Music</span>
+
+              <h3>
+                Live Nepalese Music and Cultural Night
+              </h3>
+
+              <p class="event-detail">
+                📍 Birmingham, United Kingdom
+              </p>
+
+              <p class="event-detail">
+                🕒 Starts at 7:00 PM
+              </p>
+
+              <a href="events.html" class="text-link">
+                View event →
+              </a>
+
+            </div>
+
+          </article>
+
+          <article class="event-card">
+
+            <a href="events.html" class="event-image">
+
+              <img
+                src="assets/event-three.jpg"
+                alt="Nepalese professional networking event"
+              >
+
+              <div class="event-date-box">
+                <strong>17</strong>
+                <span>AUG</span>
+              </div>
+
+            </a>
+
+            <div class="event-content">
+
+              <span class="content-tag">Networking</span>
+
+              <h3>
+                Nepalese Professionals Networking Meetup
+              </h3>
+
+              <p class="event-detail">
+                📍 Manchester, United Kingdom
+              </p>
+
+              <p class="event-detail">
+                🕒 Starts at 2:00 PM
+              </p>
+
+              <a href="events.html" class="text-link">
+                View event →
+              </a>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Community Spotlight -->
+    <section class="section community-spotlight-section">
+
+      <div class="container community-spotlight-grid">
+
+        <div class="community-spotlight-image">
+
+          <img
+            src="assets/community-spotlight.jpg"
+            alt="UKMandu community spotlight"
+          >
+
+        </div>
+
+        <div class="community-spotlight-content">
+
+          <p class="eyebrow">Community Spotlight</p>
+
+          <h2>
+            Celebrating people making a difference.
+          </h2>
 
           <p>
-            Discover podcasts, stories and useful information based on
-            topics that matter to the UK Nepalese community.
+            UKMandu highlights individuals, organisations and initiatives
+            contributing positively to the Nepalese community in the UK.
           </p>
 
-        </div>
+          <p>
+            Share your story or nominate someone whose work deserves recognition.
+          </p>
 
+          <div class="card-buttons">
 
-        <div class="topic-grid">
-
-          <a href="podcast.html" class="topic-card">
-            <span class="topic-icon">🎓</span>
-            <h3>Student Life</h3>
-            <p>Education, jobs and living in the UK.</p>
-          </a>
-
-          <a href="podcast.html" class="topic-card">
-            <span class="topic-icon">💼</span>
-            <h3>Professional Life</h3>
-            <p>Careers, skills and professional journeys.</p>
-          </a>
-
-          <a href="podcast.html" class="topic-card">
-            <span class="topic-icon">🏢</span>
-            <h3>Business</h3>
-            <p>Entrepreneurship and Nepalese businesses.</p>
-          </a>
-
-          <a href="podcast.html" class="topic-card">
-            <span class="topic-icon">🛂</span>
-            <h3>Immigration</h3>
-            <p>Visa journeys and settlement experiences.</p>
-          </a>
-
-          <a href="stories.html" class="topic-card">
-            <span class="topic-icon">🌟</span>
-            <h3>Success Stories</h3>
-            <p>People making a positive impact.</p>
-          </a>
-
-          <a href="community.html" class="topic-card">
-            <span class="topic-icon">🤝</span>
-            <h3>Community</h3>
-            <p>News, culture, achievements and resources.</p>
-          </a>
-
-          <a href="stories.html" class="topic-card">
-            <span class="topic-icon">❤️</span>
-            <h3>Health and Wellbeing</h3>
-            <p>Health, wellbeing and personal development.</p>
-          </a>
-
-          <a href="stories.html" class="topic-card">
-            <span class="topic-icon">🏠</span>
-            <h3>Living in the UK</h3>
-            <p>Housing, finance and everyday life.</p>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- STORIES -->
-    <section class="section">
-      <div class="container">
-
-        <div class="section-heading-row">
-
-          <div>
-            <span class="section-label">
-              STORIES AND GUIDES
-            </span>
-
-            <h2>Latest from the community</h2>
-          </div>
-
-          <a href="stories.html" class="text-button">
-            View all stories →
-          </a>
-
-        </div>
-
-
-        <div class="story-grid">
-
-          <article class="story-card">
-
-            <div class="story-image-placeholder">
-              Story Image
-            </div>
-
-            <div class="story-content">
-
-              <span class="content-category">
-                Student Guide
-              </span>
-
-              <h3>
-                What new Nepalese students should know before coming to the UK
-              </h3>
-
-              <p>
-                Practical information about accommodation, jobs, finance
-                and settling into life in Britain.
-              </p>
-
-              <div class="article-meta">
-                <span>6 min read</span>
-                <a href="stories.html">Read story →</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <article class="story-card">
-
-            <div class="story-image-placeholder">
-              Story Image
-            </div>
-
-            <div class="story-content">
-
-              <span class="content-category">
-                Professional Journey
-              </span>
-
-              <h3>
-                From international student to skilled professional
-              </h3>
-
-              <p>
-                A real journey of overcoming challenges and building a
-                professional future in the United Kingdom.
-              </p>
-
-              <div class="article-meta">
-                <span>5 min read</span>
-                <a href="stories.html">Read story →</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <article class="story-card">
-
-            <div class="story-image-placeholder">
-              Story Image
-            </div>
-
-            <div class="story-content">
-
-              <span class="content-category">
-                Community Awareness
-              </span>
-
-              <h3>
-                Common accommodation problems faced by new arrivals
-              </h3>
-
-              <p>
-                Important advice for avoiding scams and finding suitable
-                accommodation in the UK.
-              </p>
-
-              <div class="article-meta">
-                <span>4 min read</span>
-                <a href="stories.html">Read story →</a>
-              </div>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- EVENTS -->
-    <section class="section dark-background">
-      <div class="container">
-
-        <div class="section-heading-row light-heading">
-
-          <div>
-            <span class="section-label">
-              UPCOMING EVENTS
-            </span>
-
-            <h2>Connect with the community</h2>
-          </div>
-
-          <div class="section-actions">
-
-            <a href="events.html" class="button light-button">
-              View all events
+            <a
+              href="community.html"
+              class="button button-primary"
+            >
+              View Community
             </a>
 
             <a
               href="contact.html"
-              class="button outline-button"
+              class="button button-secondary"
             >
-              Promote your event
+              Nominate Someone
             </a>
 
           </div>
 
         </div>
 
-
-        <div class="event-grid">
-
-          <article class="event-card">
-
-            <div class="event-image-placeholder">
-              Event Poster
-            </div>
-
-            <div class="event-card-content">
-
-              <span class="event-date">
-                25 July 2026
-              </span>
-
-              <h3>Featured Nepalese Community Event</h3>
-
-              <p>London, United Kingdom</p>
-
-              <a href="events.html">
-                View event →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article class="event-card">
-
-            <div class="event-image-placeholder">
-              Event Poster
-            </div>
-
-            <div class="event-card-content">
-
-              <span class="event-date">
-                1 August 2026
-              </span>
-
-              <h3>Nepalese Cultural Festival</h3>
-
-              <p>London, United Kingdom</p>
-
-              <a href="events.html">
-                View event →
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article class="event-card">
-
-            <div class="event-image-placeholder">
-              Event Poster
-            </div>
-
-            <div class="event-card-content">
-
-              <span class="event-date">
-                24 August 2026
-              </span>
-
-              <h3>Community Music and Cultural Night</h3>
-
-              <p>United Kingdom</p>
-
-              <a href="events.html">
-                View event →
-              </a>
-
-            </div>
-
-          </article>
-
-        </div>
-
       </div>
+
     </section>
 
+    <!-- Official Partners -->
+    <section class="section section-soft">
 
-    <!-- COMMUNITY SPOTLIGHT -->
-    <section class="section">
-      <div class="container community-spotlight">
+      <div class="container">
 
-        <div class="spotlight-image-placeholder">
-          Community Member Photo
-        </div>
+        <div class="section-heading centered">
 
-        <div class="spotlight-content">
-
-          <span class="section-label">
-            COMMUNITY SPOTLIGHT
-          </span>
+          <p class="eyebrow">Official Partners</p>
 
           <h2>
-            Celebrating people making a positive difference
+            Trusted organisations supporting UKMandu.
           </h2>
 
           <p>
-            Each month, UKMandu highlights a student, professional,
-            entrepreneur, volunteer or community member whose work and
-            journey inspire others.
+            We work with organisations providing valuable services,
+            opportunities and support to the community.
           </p>
+
+        </div>
+
+        <div class="partners-logo-grid">
+
+          <a href="partners.html" class="partner-logo-card">
+            <img
+              src="assets/partners/himal-foods.png"
+              alt="Himal Food Store"
+            >
+          </a>
+
+          <a href="partners.html" class="partner-logo-card">
+            <img
+              src="assets/partners/abroad-study-nepal.png"
+              alt="Abroad Study Nepal"
+            >
+          </a>
+
+          <a href="partners.html" class="partner-logo-card">
+            <img
+              src="assets/partners/ish-management.png"
+              alt="ISH Management"
+            >
+          </a>
+
+          <a href="partners.html" class="partner-logo-card">
+            <img
+              src="assets/partners/astra-entertainment.png"
+              alt="Astra Entertainment"
+            >
+          </a>
+
+          <a href="partners.html" class="partner-logo-card">
+            <img
+              src="assets/partners/sunil-pun.png"
+              alt="Sunil Pun Protection Adviser"
+            >
+          </a>
+
+        </div>
+
+        <div class="centered-button">
 
           <a
-            href="community.html"
-            class="button primary-button"
+            href="partners.html"
+            class="button button-secondary"
           >
-            Explore Community Stories
+            Explore Our Partners
           </a>
 
         </div>
 
       </div>
+
     </section>
 
+    <!-- Follow UKMandu -->
+    <section class="section social-section">
 
-    <!-- PARTNERS -->
-    <section class="section light-background">
-      <div class="container">
+      <div class="container social-grid">
 
-        <div class="centered-heading">
+        <div>
 
-          <span class="section-label">
-            OFFICIAL PARTNERS
-          </span>
+          <p class="eyebrow">Follow UKMandu</p>
 
           <h2>
-            Trusted organisations supporting UKMandu
+            Stay connected wherever you watch.
           </h2>
 
           <p>
-            UKMandu works with selected organisations that support our
-            media platform and the wider Nepalese community in the UK.
+            Follow UKMandu for new podcast episodes, community updates,
+            event information and practical UK content.
           </p>
 
         </div>
 
-
-        <div class="partner-grid">
-
-          <div class="partner-card">
-            Himal Food Store
-          </div>
-
-          <div class="partner-card">
-            Abroad Study Nepal
-          </div>
-
-          <div class="partner-card">
-            ISH Management
-          </div>
-
-          <div class="partner-card">
-            Sunil Pun
-          </div>
-
-          <div class="partner-card">
-            Astra Entertainment
-          </div>
-
-        </div>
-
-
-        <div class="centered-action">
-
-          <a href="partners.html" class="button dark-button">
-            Meet Our Partners
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- SOCIAL -->
-    <section class="section">
-      <div class="container">
-
-        <div class="centered-heading">
-
-          <span class="section-label">
-            FOLLOW UKMANDU
-          </span>
-
-          <h2>Join our growing online community</h2>
-
-          <p>
-            Watch podcast clips, community stories, event promotions and
-            useful UK information across our social media channels.
-          </p>
-
-        </div>
-
-
-        <div class="social-grid">
+        <div class="social-links-grid">
 
           <a
             href="https://www.youtube.com/@Ukmandu"
             target="_blank"
+            rel="noopener noreferrer"
             class="social-card"
           >
-            <strong>YouTube</strong>
-            <span>@Ukmandu</span>
+            <span>▶</span>
+            <div>
+              <strong>YouTube</strong>
+              <small>@Ukmandu</small>
+            </div>
           </a>
 
           <a
-            href="https://www.instagram.com/ukmandu.official/"
+            href="https://www.instagram.com/ukmandu.official"
             target="_blank"
+            rel="noopener noreferrer"
             class="social-card"
           >
-            <strong>Instagram</strong>
-            <span>@ukmandu.official</span>
+            <span>◎</span>
+            <div>
+              <strong>Instagram</strong>
+              <small>@ukmandu.official</small>
+            </div>
           </a>
 
           <a
             href="https://www.tiktok.com/@podcast_by_pradeep"
             target="_blank"
+            rel="noopener noreferrer"
             class="social-card"
           >
-            <strong>TikTok</strong>
-            <span>@podcast_by_pradeep</span>
-          </a>
-
-          <a href="#" class="social-card">
-            <strong>Facebook</strong>
-            <span>UKMandu</span>
+            <span>♪</span>
+            <div>
+              <strong>TikTok</strong>
+              <small>@podcast_by_pradeep</small>
+            </div>
           </a>
 
         </div>
 
       </div>
+
     </section>
 
-
-    <!-- WORK WITH US -->
+    <!-- Work With UKMandu -->
     <section class="section work-with-us-section">
-      <div class="container">
 
-        <div class="centered-heading light-heading">
-
-          <span class="section-label">
-            WORK WITH UKMANDU
-          </span>
-
-          <h2>
-            Connect your brand or event with our community
-          </h2>
-
-          <p>
-            Reach Nepalese audiences across the UK through trusted content,
-            podcast sponsorship and community-focused promotion.
-          </p>
-
-        </div>
-
-
-        <div class="service-grid">
-
-          <article class="service-card">
-
-            <span class="service-icon">🎙️</span>
-
-            <h3>Sponsor the Podcast</h3>
-
-            <p>
-              Build trust and visibility through UKMandu podcast sponsorship.
-            </p>
-
-            <a href="contact.html">
-              Learn more →
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="service-icon">📢</span>
-
-            <h3>Promote Your Business</h3>
-
-            <p>
-              Reach the Nepalese community through social media and video campaigns.
-            </p>
-
-            <a href="contact.html">
-              Learn more →
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="service-icon">🎉</span>
-
-            <h3>Promote Your Event</h3>
-
-            <p>
-              Get your event featured across UKMandu’s website and social platforms.
-            </p>
-
-            <a href="contact.html">
-              Learn more →
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- NEWSLETTER -->
-    <section class="newsletter-section">
-      <div class="container newsletter-layout">
+      <div class="container work-with-us-card">
 
         <div>
 
-          <span class="section-label">
-            STAY CONNECTED
-          </span>
+          <p class="eyebrow eyebrow-light">
+            Work With UKMandu
+          </p>
 
           <h2>
-            Get UKMandu updates directly to your inbox
+            Reach and connect with the Nepalese community.
           </h2>
 
           <p>
-            Receive new podcasts, events, community stories and useful
-            UK information.
+            Partner with UKMandu through podcast sponsorship,
+            business promotion, event promotion, video production
+            and social media marketing.
           </p>
 
         </div>
 
+        <div class="work-with-us-actions">
+
+          <a
+            href="work-with-us.html"
+            class="button button-white"
+          >
+            Explore Services
+          </a>
+
+          <a
+            href="contact.html"
+            class="button button-outline-light"
+          >
+            Contact UKMandu
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Newsletter -->
+    <section
+      class="section newsletter-section"
+      id="newsletter"
+    >
+
+      <div class="container newsletter-card">
+
+        <div>
+
+          <p class="eyebrow">UKMandu Newsletter</p>
+
+          <h2>
+            Community stories and updates in your inbox.
+          </h2>
+
+          <p>
+            Receive new podcast episodes, upcoming events,
+            important resources and opportunities.
+          </p>
+
+        </div>
 
         <form class="newsletter-form" id="newsletterForm">
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-          >
+          <label class="sr-only" for="newsletterEmail">
+            Email address
+          </label>
 
           <input
             type="email"
+            id="newsletterEmail"
             name="email"
-            placeholder="Your email address"
+            placeholder="Enter your email address"
             required
           >
 
           <button
             type="submit"
-            class="button primary-button"
+            class="button button-primary"
           >
             Subscribe
           </button>
 
+          <p
+            class="newsletter-message"
+            id="newsletterMessage"
+            aria-live="polite"
+          ></p>
+
         </form>
 
       </div>
+
     </section>
 
   </main>
 
-
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="site-footer">
 
     <div class="container footer-grid">
 
-      <div class="footer-brand">
+      <div class="footer-brand-column">
 
-        <a href="index.html" class="site-logo footer-logo">
+        <a
+          href="index.html"
+          class="footer-brand"
+          aria-label="UKMandu Home"
+        >
           <img
             src="assets/ukmandu-logo.png"
-            alt="UKMandu Logo"
+            alt="UKMandu logo"
+            class="footer-logo"
           >
         </a>
 
         <p>
-          The Voice of Nepalese in the UK.
+          UKMandu is a Nepalese community media platform in the UK,
+          connecting people through podcasts, stories, events,
+          resources and trusted partnerships.
         </p>
 
-        <p>
-          Podcasts, stories, events, community and trusted partnerships.
+        <p class="footer-slogan">
+          Voice of Nepalese in UK
         </p>
 
       </div>
-
 
       <div class="footer-column">
 
@@ -984,7 +1115,6 @@
 
       </div>
 
-
       <div class="footer-column">
 
         <h3>UKMandu</h3>
@@ -996,54 +1126,53 @@
 
       </div>
 
-
       <div class="footer-column">
 
-        <h3>Work With Us</h3>
+        <h3>Follow</h3>
 
-        <a href="contact.html">
-          Podcast Sponsorship
+        <a
+          href="https://www.youtube.com/@Ukmandu"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          YouTube
         </a>
 
-        <a href="contact.html">
-          Business Promotion
+        <a
+          href="https://www.instagram.com/ukmandu.official"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
         </a>
 
-        <a href="contact.html">
-          Event Promotion
+        <a
+          href="https://www.tiktok.com/@podcast_by_pradeep"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          TikTok
         </a>
-
-      </div>
-
-
-      <div class="footer-column">
-
-        <h3>Legal</h3>
-
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms and Conditions</a>
-        <a href="cookies.html">Cookie Policy</a>
 
       </div>
 
     </div>
-
 
     <div class="container footer-bottom">
 
       <p>
-        © <span id="currentYear"></span> UKMANDU LTD LTD.
+        © <span id="currentYear"></span> UKMandu LTD LTD.
         All rights reserved.
       </p>
 
-      <p>
-        London, United Kingdom
-      </p>
+      <div>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+      </div>
 
     </div>
 
   </footer>
-
 
   <script src="js/main.js"></script>
 
