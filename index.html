@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="UKMandu is the voice of Nepalese in the UK, sharing podcasts, community stories, events, useful resources and trusted partnerships."
+    content="UKMandu is the voice of Nepalese in the UK, sharing podcasts, stories, events, community resources and trusted partnerships."
   >
 
   <title>UKMandu | Voice of Nepalese in the UK</title>
@@ -22,7 +22,6 @@
 
   <!-- TOP UTILITY BAR -->
   <div class="utility-bar">
-
     <div class="container utility-content">
 
       <div class="utility-item">
@@ -41,27 +40,29 @@
 
       <div class="utility-item">
         <span>💱 GBP → NPR:</span>
-        <strong id="exchangeRate">Loading...</strong>
+        <strong id="exchangeRate">203.00</strong>
       </div>
 
     </div>
-
   </div>
 
 
   <!-- HEADER -->
   <header class="site-header">
-
     <div class="container navbar">
 
-     <a href="index.html" class="site-logo">
-  <img src="assets/ukmandu-logo.png" alt="UKMandu">
-</a>
+      <a href="index.html" class="site-logo">
+        <img
+          src="assets/ukmandu-logo.png"
+          alt="UKMandu Logo"
+        >
+      </a>
 
       <button
         class="mobile-menu-button"
         id="mobileMenuButton"
         aria-label="Open navigation menu"
+        aria-expanded="false"
       >
         <span></span>
         <span></span>
@@ -69,16 +70,15 @@
       </button>
 
       <nav class="main-navigation" id="mainNavigation">
-
         <a href="index.html" class="active">Home</a>
         <a href="podcast.html">Podcast</a>
         <a href="stories.html">Stories</a>
         <a href="events.html">Events</a>
         <a href="community.html">Community</a>
         <a href="partners.html">Partners</a>
+        <a href="work-with-us.html">Work With Us</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-
       </nav>
 
       <div class="header-actions">
@@ -86,7 +86,6 @@
         <a
           href="https://www.youtube.com/@Ukmandu"
           target="_blank"
-          rel="noopener"
           class="header-button secondary-button"
         >
           Watch Podcast
@@ -102,7 +101,6 @@
       </div>
 
     </div>
-
   </header>
 
 
@@ -110,7 +108,6 @@
 
     <!-- HERO -->
     <section class="hero-section">
-
       <div class="container hero-layout">
 
         <div class="hero-content">
@@ -135,7 +132,6 @@
             <a
               href="https://www.youtube.com/@Ukmandu"
               target="_blank"
-              rel="noopener"
               class="button primary-button"
             >
               Watch Latest Podcast
@@ -162,7 +158,7 @@
 
         <div class="hero-feature">
 
-          <div class="featured-video-card">
+          <article class="featured-video-card">
 
             <div class="featured-video-placeholder">
 
@@ -170,12 +166,13 @@
                 Featured Podcast
               </span>
 
-              <button
+              <a
+                href="https://www.youtube.com/@Ukmandu"
+                target="_blank"
                 class="play-button"
-                aria-label="Play featured podcast"
               >
                 ▶
-              </button>
+              </a>
 
             </div>
 
@@ -190,25 +187,22 @@
               <a
                 href="https://www.youtube.com/@Ukmandu"
                 target="_blank"
-                rel="noopener"
               >
                 Watch on YouTube →
               </a>
 
             </div>
 
-          </div>
+          </article>
 
         </div>
 
       </div>
-
     </section>
 
 
     <!-- STATISTICS -->
     <section class="statistics-section">
-
       <div class="container statistics-grid">
 
         <div class="statistic-card">
@@ -237,13 +231,11 @@
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- FEATURED PODCAST -->
+    <!-- PODCASTS -->
     <section class="section">
-
       <div class="container">
 
         <div class="section-heading-row">
@@ -265,7 +257,7 @@
           <article class="podcast-card">
 
             <div class="podcast-image-placeholder">
-              <span>Podcast Thumbnail</span>
+              Podcast Thumbnail
             </div>
 
             <div class="podcast-card-content">
@@ -283,7 +275,9 @@
                 and adapting to life in Britain.
               </p>
 
-              <a href="#">Watch episode →</a>
+              <a href="podcast.html">
+                Watch episode →
+              </a>
 
             </div>
 
@@ -293,7 +287,7 @@
           <article class="podcast-card">
 
             <div class="podcast-image-placeholder">
-              <span>Podcast Thumbnail</span>
+              Podcast Thumbnail
             </div>
 
             <div class="podcast-card-content">
@@ -311,7 +305,9 @@
                 professionals working across the United Kingdom.
               </p>
 
-              <a href="#">Watch episode →</a>
+              <a href="podcast.html">
+                Watch episode →
+              </a>
 
             </div>
 
@@ -321,7 +317,7 @@
           <article class="podcast-card">
 
             <div class="podcast-image-placeholder">
-              <span>Podcast Thumbnail</span>
+              Podcast Thumbnail
             </div>
 
             <div class="podcast-card-content">
@@ -339,7 +335,9 @@
                 helping the Nepalese community.
               </p>
 
-              <a href="#">Watch episode →</a>
+              <a href="podcast.html">
+                Watch episode →
+              </a>
 
             </div>
 
@@ -348,13 +346,11 @@
         </div>
 
       </div>
-
     </section>
 
 
     <!-- TOPICS -->
     <section class="section light-background">
-
       <div class="container">
 
         <div class="centered-heading">
@@ -375,31 +371,31 @@
 
         <div class="topic-grid">
 
-          <a href="podcast.html?category=student-life" class="topic-card">
+          <a href="podcast.html" class="topic-card">
             <span class="topic-icon">🎓</span>
             <h3>Student Life</h3>
             <p>Education, jobs and living in the UK.</p>
           </a>
 
-          <a href="podcast.html?category=professional" class="topic-card">
+          <a href="podcast.html" class="topic-card">
             <span class="topic-icon">💼</span>
             <h3>Professional Life</h3>
             <p>Careers, skills and professional journeys.</p>
           </a>
 
-          <a href="podcast.html?category=business" class="topic-card">
+          <a href="podcast.html" class="topic-card">
             <span class="topic-icon">🏢</span>
             <h3>Business</h3>
             <p>Entrepreneurship and Nepalese businesses.</p>
           </a>
 
-          <a href="podcast.html?category=immigration" class="topic-card">
+          <a href="podcast.html" class="topic-card">
             <span class="topic-icon">🛂</span>
             <h3>Immigration</h3>
             <p>Visa journeys and settlement experiences.</p>
           </a>
 
-          <a href="stories.html?category=success" class="topic-card">
+          <a href="stories.html" class="topic-card">
             <span class="topic-icon">🌟</span>
             <h3>Success Stories</h3>
             <p>People making a positive impact.</p>
@@ -411,13 +407,13 @@
             <p>News, culture, achievements and resources.</p>
           </a>
 
-          <a href="stories.html?category=health" class="topic-card">
+          <a href="stories.html" class="topic-card">
             <span class="topic-icon">❤️</span>
             <h3>Health and Wellbeing</h3>
             <p>Health, wellbeing and personal development.</p>
           </a>
 
-          <a href="stories.html?category=living-in-uk" class="topic-card">
+          <a href="stories.html" class="topic-card">
             <span class="topic-icon">🏠</span>
             <h3>Living in the UK</h3>
             <p>Housing, finance and everyday life.</p>
@@ -426,19 +422,20 @@
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- LATEST STORIES -->
+    <!-- STORIES -->
     <section class="section">
-
       <div class="container">
 
         <div class="section-heading-row">
 
           <div>
-            <span class="section-label">STORIES AND GUIDES</span>
+            <span class="section-label">
+              STORIES AND GUIDES
+            </span>
+
             <h2>Latest from the community</h2>
           </div>
 
@@ -474,7 +471,7 @@
 
               <div class="article-meta">
                 <span>6 min read</span>
-                <a href="#">Read story →</a>
+                <a href="stories.html">Read story →</a>
               </div>
 
             </div>
@@ -505,7 +502,7 @@
 
               <div class="article-meta">
                 <span>5 min read</span>
-                <a href="#">Read story →</a>
+                <a href="stories.html">Read story →</a>
               </div>
 
             </div>
@@ -536,7 +533,7 @@
 
               <div class="article-meta">
                 <span>4 min read</span>
-                <a href="#">Read story →</a>
+                <a href="stories.html">Read story →</a>
               </div>
 
             </div>
@@ -546,19 +543,20 @@
         </div>
 
       </div>
-
     </section>
 
 
     <!-- EVENTS -->
     <section class="section dark-background">
-
       <div class="container">
 
         <div class="section-heading-row light-heading">
 
           <div>
-            <span class="section-label">UPCOMING EVENTS</span>
+            <span class="section-label">
+              UPCOMING EVENTS
+            </span>
+
             <h2>Connect with the community</h2>
           </div>
 
@@ -568,7 +566,10 @@
               View all events
             </a>
 
-            <a href="contact.html?type=event" class="button outline-button">
+            <a
+              href="contact.html"
+              class="button outline-button"
+            >
               Promote your event
             </a>
 
@@ -593,11 +594,11 @@
 
               <h3>Featured Nepalese Community Event</h3>
 
-              <p>
-                London, United Kingdom
-              </p>
+              <p>London, United Kingdom</p>
 
-              <a href="#">View event →</a>
+              <a href="events.html">
+                View event →
+              </a>
 
             </div>
 
@@ -618,11 +619,11 @@
 
               <h3>Nepalese Cultural Festival</h3>
 
-              <p>
-                London, United Kingdom
-              </p>
+              <p>London, United Kingdom</p>
 
-              <a href="#">View event →</a>
+              <a href="events.html">
+                View event →
+              </a>
 
             </div>
 
@@ -643,11 +644,11 @@
 
               <h3>Community Music and Cultural Night</h3>
 
-              <p>
-                United Kingdom
-              </p>
+              <p>United Kingdom</p>
 
-              <a href="#">View event →</a>
+              <a href="events.html">
+                View event →
+              </a>
 
             </div>
 
@@ -656,13 +657,11 @@
         </div>
 
       </div>
-
     </section>
 
 
     <!-- COMMUNITY SPOTLIGHT -->
     <section class="section">
-
       <div class="container community-spotlight">
 
         <div class="spotlight-image-placeholder">
@@ -685,20 +684,21 @@
             journey inspire others.
           </p>
 
-          <a href="community.html" class="button primary-button">
+          <a
+            href="community.html"
+            class="button primary-button"
+          >
             Explore Community Stories
           </a>
 
         </div>
 
       </div>
-
     </section>
 
 
     <!-- PARTNERS -->
     <section class="section light-background">
-
       <div class="container">
 
         <div class="centered-heading">
@@ -722,23 +722,23 @@
         <div class="partner-grid">
 
           <div class="partner-card">
-            <span>Himal Food Store</span>
+            Himal Food Store
           </div>
 
           <div class="partner-card">
-            <span>Abroad Study Nepal</span>
+            Abroad Study Nepal
           </div>
 
           <div class="partner-card">
-            <span>ISH Management</span>
+            ISH Management
           </div>
 
           <div class="partner-card">
-            <span>Sunil Pun</span>
+            Sunil Pun
           </div>
 
           <div class="partner-card">
-            <span>Astra Entertainment</span>
+            Astra Entertainment
           </div>
 
         </div>
@@ -753,13 +753,11 @@
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- SOCIAL MEDIA -->
+    <!-- SOCIAL -->
     <section class="section">
-
       <div class="container">
 
         <div class="centered-heading">
@@ -783,7 +781,6 @@
           <a
             href="https://www.youtube.com/@Ukmandu"
             target="_blank"
-            rel="noopener"
             class="social-card"
           >
             <strong>YouTube</strong>
@@ -793,7 +790,6 @@
           <a
             href="https://www.instagram.com/ukmandu.official/"
             target="_blank"
-            rel="noopener"
             class="social-card"
           >
             <strong>Instagram</strong>
@@ -801,17 +797,15 @@
           </a>
 
           <a
-            href="#"
+            href="https://www.tiktok.com/@podcast_by_pradeep"
+            target="_blank"
             class="social-card"
           >
             <strong>TikTok</strong>
             <span>@podcast_by_pradeep</span>
           </a>
 
-          <a
-            href="#"
-            class="social-card"
-          >
+          <a href="#" class="social-card">
             <strong>Facebook</strong>
             <span>UKMandu</span>
           </a>
@@ -819,13 +813,11 @@
         </div>
 
       </div>
-
     </section>
 
 
-    <!-- WORK WITH UKMANDU -->
+    <!-- WORK WITH US -->
     <section class="section work-with-us-section">
-
       <div class="container">
 
         <div class="centered-heading light-heading">
@@ -849,48 +841,63 @@
         <div class="service-grid">
 
           <article class="service-card">
+
             <span class="service-icon">🎙️</span>
+
             <h3>Sponsor the Podcast</h3>
+
             <p>
               Build trust and visibility through UKMandu podcast sponsorship.
             </p>
-            <a href="contact.html?type=sponsorship">
+
+            <a href="contact.html">
               Learn more →
             </a>
+
           </article>
 
+
           <article class="service-card">
+
             <span class="service-icon">📢</span>
+
             <h3>Promote Your Business</h3>
+
             <p>
               Reach the Nepalese community through social media and video campaigns.
             </p>
-            <a href="contact.html?type=business">
+
+            <a href="contact.html">
               Learn more →
             </a>
+
           </article>
 
+
           <article class="service-card">
+
             <span class="service-icon">🎉</span>
+
             <h3>Promote Your Event</h3>
+
             <p>
               Get your event featured across UKMandu’s website and social platforms.
             </p>
-            <a href="contact.html?type=event">
+
+            <a href="contact.html">
               Learn more →
             </a>
+
           </article>
 
         </div>
 
       </div>
-
     </section>
 
 
     <!-- NEWSLETTER -->
     <section class="newsletter-section">
-
       <div class="container newsletter-layout">
 
         <div>
@@ -911,31 +918,31 @@
         </div>
 
 
-        <form class="newsletter-form">
+        <form class="newsletter-form" id="newsletterForm">
 
           <input
             type="text"
             name="name"
             placeholder="Your name"
-            aria-label="Your name"
           >
 
           <input
             type="email"
             name="email"
             placeholder="Your email address"
-            aria-label="Your email address"
             required
           >
 
-          <button type="submit" class="button primary-button">
+          <button
+            type="submit"
+            class="button primary-button"
+          >
             Subscribe
           </button>
 
         </form>
 
       </div>
-
     </section>
 
   </main>
@@ -949,7 +956,10 @@
       <div class="footer-brand">
 
         <a href="index.html" class="site-logo footer-logo">
-          UKMandu
+          <img
+            src="assets/ukmandu-logo.png"
+            alt="UKMandu Logo"
+          >
         </a>
 
         <p>
@@ -980,9 +990,9 @@
         <h3>UKMandu</h3>
 
         <a href="partners.html">Partners</a>
+        <a href="work-with-us.html">Work With Us</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="podcast.html#be-our-guest">Become a Guest</a>
 
       </div>
 
@@ -991,15 +1001,15 @@
 
         <h3>Work With Us</h3>
 
-        <a href="contact.html?type=sponsorship">
+        <a href="contact.html">
           Podcast Sponsorship
         </a>
 
-        <a href="contact.html?type=business">
+        <a href="contact.html">
           Business Promotion
         </a>
 
-        <a href="contact.html?type=event">
+        <a href="contact.html">
           Event Promotion
         </a>
 
